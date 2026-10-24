@@ -1,0 +1,314 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Política de privacidad · DeportesMadrid</title>
+  <meta name="description" content="Política de privacidad de DeportesMadrid, la app para seguir equipos de los Juegos Deportivos Municipales de Madrid.">
+  <link rel="icon" href="icono.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;600;700&family=Barlow+Condensed:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    /* Mismos colores que la app (src/theme/variables.scss) */
+    :root {
+      --pista: #0e5a45;
+      --pista-raya: #106049;
+      --linea: #e8b321;
+      --tinta: #15211d;
+      --tinta-suave: #52605b;
+      --fondo: #f2f4f3;
+      --superficie: #ffffff;
+      --borde: #d9dfdc;
+      --enlace: #0e5a45;
+      --marcador: 'Barlow Condensed', 'Barlow', system-ui, sans-serif;
+      color-scheme: light;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --pista: #17473a;
+        --pista-raya: #194c3e;
+        --linea: #f2c230;
+        --tinta: #e6eeea;
+        --tinta-suave: #9fb0a9;
+        --fondo: #0b1a15;
+        --superficie: #12261f;
+        --borde: #23392f;
+        --enlace: #4fb08c;
+        color-scheme: dark;
+      }
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background: var(--fondo);
+      color: var(--tinta);
+      font: 400 1.0625rem/1.6 'Barlow', system-ui, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Cabecera: la pista, con sus franjas y la línea amarilla */
+    .cabecera {
+      background:
+        repeating-linear-gradient(90deg, var(--pista) 0 64px, var(--pista-raya) 64px 128px);
+      border-bottom: 4px solid var(--linea);
+      color: #fff;
+      padding: 40px 16px 48px;
+    }
+    .cabecera .contenido {
+      max-width: 720px;
+      margin: 0 auto;
+      display: flex;
+      gap: 20px;
+      align-items: center;
+    }
+    .cabecera img {
+      width: 72px;
+      height: 72px;
+      border-radius: 18px;
+      box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.25);
+      flex: none;
+    }
+    .cabecera p {
+      margin: 0;
+      font-weight: 600;
+      opacity: 0.85;
+    }
+    h1 {
+      margin: 0;
+      font: 700 clamp(2rem, 6vw, 2.75rem)/1.05 var(--marcador);
+      text-wrap: balance;
+    }
+
+    main {
+      max-width: 720px;
+      margin: -24px auto 0;
+      padding: 0 16px 48px;
+    }
+
+    .hoja {
+      background: var(--superficie);
+      border: 1px solid var(--borde);
+      border-radius: 12px;
+      padding: 28px clamp(18px, 5vw, 40px) 32px;
+    }
+
+    .actualizada {
+      margin: 0 0 20px;
+      color: var(--tinta-suave);
+      font-size: 0.95rem;
+    }
+
+    /* Resumen en tres puntos */
+    .resumen {
+      display: grid;
+      gap: 12px;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      margin: 0 0 8px;
+      padding: 0;
+      list-style: none;
+    }
+    .resumen li {
+      background: var(--fondo);
+      border-radius: 8px;
+      padding: 14px 16px;
+      border-inline-start: 4px solid var(--linea);
+    }
+    .resumen strong {
+      display: block;
+      font: 700 1.15rem/1.2 var(--marcador);
+      margin-bottom: 2px;
+    }
+    .resumen span {
+      color: var(--tinta-suave);
+      font-size: 0.95rem;
+      line-height: 1.4;
+    }
+
+    h2 {
+      margin: 36px 0 8px;
+      font: 700 1.5rem/1.2 var(--marcador);
+      text-wrap: balance;
+    }
+    h2::before {
+      content: '';
+      display: inline-block;
+      width: 14px;
+      height: 4px;
+      margin: 0 10px 0.3em 0;
+      background: var(--linea);
+      border-radius: 2px;
+      vertical-align: middle;
+    }
+
+    p { margin: 0 0 12px; }
+    ul { margin: 0 0 12px; padding-inline-start: 22px; }
+    li + li { margin-top: 6px; }
+
+    a {
+      color: var(--enlace);
+      font-weight: 600;
+      text-underline-offset: 2px;
+      overflow-wrap: anywhere;
+    }
+
+    .contacto {
+      margin-top: 36px;
+      padding: 20px;
+      border-radius: 10px;
+      background: var(--fondo);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px 20px;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .contacto p { margin: 0; }
+    .boton {
+      display: inline-block;
+      min-height: 44px;
+      padding: 10px 18px;
+      border-radius: 8px;
+      background: var(--pista);
+      color: #fff;
+      text-decoration: none;
+      font-weight: 700;
+    }
+    @media (prefers-color-scheme: dark) {
+      .boton { background: #4fb08c; color: #0b1a15; }
+    }
+
+    footer {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 0 16px 40px;
+      color: var(--tinta-suave);
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+  <header class="cabecera">
+    <div class="contenido">
+      <img src="icono.svg" alt="" width="72" height="72">
+      <div>
+        <p translate="no">DeportesMadrid</p>
+        <h1>Política de privacidad</h1>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <article class="hoja">
+      <p class="actualizada">Última actualización: 24 de octubre de 2026.</p>
+
+      <p>
+        <span translate="no">DeportesMadrid</span> es una app para seguir equipos de los Juegos Deportivos Municipales de Madrid:
+        próximo partido, resultados, clasificación y temporadas anteriores. Esta página explica qué datos usa la app y quién los recibe.
+      </p>
+
+      <ul class="resumen">
+        <li><strong>Sin cuentas</strong><span>No hay registro ni inicio de sesión.</span></li>
+        <li><strong>Tus datos, en tu móvil</strong><span>Equipos y plantillas no salen de tu dispositivo.</span></li>
+        <li><strong>Un anuncio</strong><span>La app de Android muestra un banner de Google AdMob.</span></li>
+      </ul>
+
+      <h2>Responsable</h2>
+      <p>
+        Sergio Alcázar Monedero, desarrollador de la app. Para cualquier duda sobre esta política o sobre tus datos, escribe a
+        <a href="mailto:sergioalcazar745@gmail.com">sergioalcazar745@gmail.com</a>.
+      </p>
+
+      <h2>Qué datos recogemos</h2>
+      <p>
+        Nosotros, ninguno. La app no tiene cuentas ni registro, no usa herramientas de analítica
+        y no envía información sobre ti a ningún servidor propio.
+      </p>
+
+      <h2>Qué se guarda en tu dispositivo</h2>
+      <ul>
+        <li>Los equipos que sigues y cuál tienes activo.</li>
+        <li>Los jugadores que das de alta en la plantilla de tus equipos (nombre, apellidos y posición), sus tarjetas y quién marcó y asistió en cada partido.</li>
+        <li>El tema elegido (claro u oscuro).</li>
+        <li>Una copia de los partidos y las clasificaciones descargados, para que la app abra rápido y funcione sin conexión.</li>
+      </ul>
+      <p>Estos datos no salen de tu dispositivo y no tenemos acceso a ellos.</p>
+
+      <h2>Publicidad</h2>
+      <p>
+        La app de Android muestra un anuncio en la parte inferior, servido por <strong>Google AdMob</strong> (Google Ireland Limited).
+        Para mostrarlo, Google recibe datos de tu dispositivo: la dirección IP, el identificador de publicidad,
+        el modelo y la versión del sistema, y cómo interactúas con el anuncio. Con ellos elige el anuncio,
+        cuenta cuántas veces se ve y evita fraudes.
+      </p>
+      <p>
+        Al abrir la app por primera vez te preguntamos si aceptas anuncios personalizados. Si no los aceptas,
+        los anuncios siguen apareciendo, pero no se basan en tus intereses. Puedes cambiar tu elección cuando quieras
+        desde <em>Menú → Acerca de y privacidad → Cambiar consentimiento de anuncios</em>.
+      </p>
+      <p>
+        El tratamiento de esos datos se rige por la
+        <a href="https://policies.google.com/technologies/partner-sites?hl=es" target="_blank" rel="noopener">política de Google sobre el uso de datos en apps de partners</a>
+        y la <a href="https://policies.google.com/privacy?hl=es" target="_blank" rel="noopener">política de privacidad de Google</a>.
+        También puedes restablecer o eliminar tu identificador de publicidad en los ajustes de Android (Google → Anuncios).
+      </p>
+      <p>La versión web de la app no muestra anuncios.</p>
+
+      <h2>A quién se conecta la app</h2>
+      <ul>
+        <li>
+          A <strong>datos.madrid.es</strong> (Portal de Datos Abiertos del Ayuntamiento de Madrid), para descargar los datos públicos
+          de partidos y clasificaciones. Como cualquier web, ese servidor recibe tu dirección IP; no se le envía nada más.
+        </li>
+        <li>A <strong>Google AdMob</strong>, en la app de Android, para mostrar el anuncio (ver «Publicidad»).</li>
+        <li>
+          A <strong>Google Maps</strong>, solo si pulsas «Cómo llegar». Se abre fuera de la app
+          y se rige por la política de privacidad de Google.
+        </li>
+      </ul>
+
+      <h2>Cómo borrar tus datos</h2>
+      <p>
+        Deja de seguir un equipo desde el menú lateral (se borra también su plantilla) o elimina un jugador desde su ficha.
+        Para borrarlo todo, borra los datos de la app en los ajustes del móvil o desinstálala; en el navegador, borra los datos del sitio.
+      </p>
+
+      <h2>Tus derechos</h2>
+      <p>
+        Como no guardamos datos tuyos en ningún servidor, no tenemos nada que consultar, corregir ni borrar por ti:
+        todo está en tu dispositivo y lo controlas tú. Sobre los datos que trata Google para la publicidad, puedes ejercer
+        tus derechos ante Google desde su política de privacidad. Si crees que no se respetan tus derechos, puedes reclamar ante la
+        <a href="https://www.aepd.es" target="_blank" rel="noopener">Agencia Española de Protección de Datos</a>.
+      </p>
+
+      <h2>Menores</h2>
+      <p>
+        La app está pensada para familias, entrenadores y jugadores adultos. Muchos equipos son infantiles: la app solo muestra
+        los nombres de los equipos que publica el Ayuntamiento y no descarga nombres de jugadores. Los jugadores de la plantilla
+        los escribes tú y solo se guardan en tu dispositivo.
+      </p>
+
+      <h2>App no oficial</h2>
+      <p>
+        <span translate="no">DeportesMadrid</span> no es oficial: no la ha hecho el Ayuntamiento de Madrid ni está relacionada con él.
+        Los datos son del Ayuntamiento de Madrid y se publican con licencia
+        <a href="https://creativecommons.org/licenses/by/4.0/deed.es" target="_blank" rel="noopener">CC BY 4.0</a>.
+      </p>
+
+      <h2>Cambios</h2>
+      <p>Si esta política cambia, la nueva versión aparecerá en esta página y en la app, con su fecha.</p>
+
+      <div class="contacto">
+        <p>¿Tienes alguna duda sobre tu privacidad?</p>
+        <a class="boton" href="mailto:sergioalcazar745@gmail.com?subject=Privacidad%20DeportesMadrid">Escribir un correo</a>
+      </div>
+    </article>
+  </main>
+
+  <footer>
+    <p><span translate="no">DeportesMadrid</span>, una app de Sergio Alcázar Monedero.</p>
+  </footer>
+</body>
+</html>
